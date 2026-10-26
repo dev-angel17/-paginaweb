@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jampier Montesinos &mdash; Ingenier&iacute;a de Software con IA | SENATI</title>
-  <link rel="stylesheet" href="src/css/styles.css?v=2">
+  <link rel="stylesheet" href="src/css/styles.css">
 </head>
 <body>
   <div class="layout">
@@ -39,7 +39,7 @@
       </div>
     </header>
 
-    <!-- Section 1: Technical Stack (No emojis, technical indexing) -->
+    <!-- Section 1: Technical Stack -->
     <section class="content-section">
       <div class="section-label mono">
         <span class="section-index">01</span> // ARQUITECTURA &amp; STACK T&Eacute;CNICO
@@ -122,6 +122,7 @@
           <button class="console-btn mono" data-spec="backend">BACKEND</button>
           <button class="console-btn mono" data-spec="ia">IA_SENATI</button>
           <button class="console-btn mono" data-spec="pipeline">PIPELINE_GIT</button>
+          <button class="console-btn mono" data-spec="proyectos">PROYECTOS</button>
         </nav>
 
         <div id="diagnostic-display" class="terminal-body mono">
@@ -133,6 +134,81 @@
       </div>
     </section>
 
+    <!-- Section 3: Selected Engineering Projects -->
+    <section class="content-section">
+      <div class="section-label mono">
+        <span class="section-index">03</span> // PROYECTOS DE INGENIER&Iacute;A SELECCIONADOS
+      </div>
+
+      <div class="projects-list">
+        <!-- Project 1 -->
+        <article class="project-card">
+          <div class="project-header">
+            <div>
+              <span class="project-tag mono">PROJ-01 // BACKEND &amp; API DESIGN</span>
+              <h3 class="project-title">RESTful Auth &amp; Core Services Gateway</h3>
+            </div>
+            <span class="project-status mono">[ IMPLEMENTED ]</span>
+          </div>
+          <p class="project-desc">
+            Arquitectura desacoplada en Node.js y Express con autenticaci&oacute;n stateless mediante JSON Web Tokens (JWT). Dise&ntilde;o modular por capas (Controllers, Services, Repositories), control centralizado de errores, pol&iacute;ticas de CORS y esquemas de validaci&oacute;n estrictos.
+          </p>
+          <div class="project-footer">
+            <div class="tech-tags mono">
+              <span>NODE.JS</span><span>EXPRESS</span><span>JWT</span><span>REST_API</span><span>MODULAR_ARCH</span>
+            </div>
+            <a href="https://github.com/dev-angel17" target="_blank" rel="noopener noreferrer" class="project-link mono">
+              &rarr; VIEW_SOURCE
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card">
+          <div class="project-header">
+            <div>
+              <span class="project-tag mono">PROJ-02 // INTELIGENCIA ARTIFICIAL APLICADA</span>
+              <h3 class="project-title">Pipeline de An&aacute;lisis &amp; Tratamiento de Datos con IA (SENATI)</h3>
+            </div>
+            <span class="project-status mono">[ SENATI_PROJECT ]</span>
+          </div>
+          <p class="project-desc">
+            Sistema de automatizaci&oacute;n para tratamiento y estructuraci&oacute;n de datos mediante integraci&oacute;n de APIs de modelos inteligentes. Dise&ntilde;o de prompts t&eacute;cnicos, extracci&oacute;n determin&iacute;stica de entidades y generaci&oacute;n autom&aacute;tica de reportes validados contra esquemas JSON.
+          </p>
+          <div class="project-footer">
+            <div class="tech-tags mono">
+              <span>SENATI_IA</span><span>MODEL_INTEGRATION</span><span>JSON_SCHEMA</span><span>AUTOMATION</span>
+            </div>
+            <a href="https://github.com/dev-angel17" target="_blank" rel="noopener noreferrer" class="project-link mono">
+              &rarr; VIEW_SOURCE
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card">
+          <div class="project-header">
+            <div>
+              <span class="project-tag mono">PROJ-03 // DEVOPS &amp; TOOLING</span>
+              <h3 class="project-title">CLI de Auditor&iacute;a Git &amp; Trazabilidad de Repositorios</h3>
+            </div>
+            <span class="project-status mono">[ TOOLING ]</span>
+          </div>
+          <p class="project-desc">
+            Herramienta de terminal para entornos Linux/WSL que audita la integridad del &aacute;rbol de Git, valida el cumplimiento del est&aacute;ndar Conventional Commits antes de confirmar y optimiza la inspecci&oacute;n de historiales entre ramas principales y caracter&iacute;sticas experimentales.
+          </p>
+          <div class="project-footer">
+            <div class="tech-tags mono">
+              <span>BASH</span><span>GIT_CLI</span><span>LINUX_WSL</span><span>LAZYGIT</span><span>CONVENTIONAL_COMMITS</span>
+            </div>
+            <a href="https://github.com/dev-angel17" target="_blank" rel="noopener noreferrer" class="project-link mono">
+              &rarr; VIEW_SOURCE
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer class="system-footer mono">
       <div>INGENIERO DE SOFTWARE CON IA &middot; SENATI PER&Uacute;</div>
@@ -140,6 +216,6 @@
     </footer>
   </div>
 
-  <script src="src/js/app.js?v=2"></script>
+  <script src="src/js/app.js"></script>
 </body>
 </html>

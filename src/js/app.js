@@ -32,6 +32,12 @@ const specsPorModulo = {
     { label: "CONTROL", val: "Flujos de trabajo ramificados (feature branches), inspección rigurosa y resolución de estados." },
     { label: "HERRAMIENTAS", val: "Git CLI, Lazygit, repositorios GitHub, Linux (WSL) y Gentle Shell." },
     { label: "ESTÁNDAR", val: "Conventional Commits (feat, fix, refactor, chore) y despliegue continuo." }
+  ],
+  proyectos: [
+    { label: "PROJ-01", val: "RESTful Auth & Core Services Gateway (Node.js, Express, JWT, REST)", highlight: true },
+    { label: "PROJ-02", val: "Pipeline IA SENATI: Extracción y tratamiento determinístico de datos con LLMs." },
+    { label: "PROJ-03", val: "CLI de Auditoría Git: Scripts Linux/Bash para trazabilidad y reglas de commit." },
+    { label: "ESTADO", val: "Código fuente disponible en GitHub: @dev-angel17." }
   ]
 };
 
