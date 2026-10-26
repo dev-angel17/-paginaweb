@@ -1,29 +1,74 @@
 // ==========================================================================
-// Módulo de exploración interactiva de habilidades (SENATI & Full Stack)
+// Consola de Diagnóstico de Arquitectura & Telemetría (SENATI & Full Stack)
 // ==========================================================================
 
-const infoPorArea = {
-  todos: "Mostrando todas las áreas: perfil equilibrado Full Stack Junior con formación sólida en Inteligencia Artificial (SENATI).",
-  frontend: "Frontend: Maquetación semántica, interfaces responsivas, consumo de APIs y buenas prácticas con JavaScript moderno.",
-  backend: "Backend: Creación de endpoints RESTful con Node.js y Express, manejo de datos y arquitectura limpia.",
-  ia: "IA & SENATI: Análisis de requerimientos para aplicar modelos inteligentes, automatización de tareas y desarrollo de software orientado al futuro."
+const specsPorModulo = {
+  overview: [
+    { label: "MÓDULO", val: "PANEL GENERAL DE INGENIERÍA", highlight: true },
+    { label: "PERFIL", val: "Full Stack Junior con formación técnica en IA (SENATI Perú)." },
+    { label: "ENFOQUE", val: "Sistemas web modulares, trazabilidad de código y desarrollo con buenas prácticas." },
+    { label: "ESTADO", val: "Disponible para incorporación a proyectos y equipos técnicos." }
+  ],
+  frontend: [
+    { label: "MÓDULO", val: "SISTEMAS DE INTERFAZ & RENDERIZADO", highlight: true },
+    { label: "STACK", val: "HTML5 Semántico, CSS3 Modular (Variables, Grid, Flexbox), JavaScript ES6+." },
+    { label: "CRITERIOS", val: "Accesibilidad, rendimiento web (Core Web Vitals), diseño adaptable sin frameworks pesados innecesarios." },
+    { label: "ESCALA", val: "Preparado para integración directa con React y TypeScript." }
+  ],
+  backend: [
+    { label: "MÓDULO", val: "SERVICIOS & ARQUITECTURA DE DATOS", highlight: true },
+    { label: "CORE", val: "Node.js runtime, Express framework, patrones MVC y capas de servicio." },
+    { label: "APIs", val: "Diseño RESTful estandarizado, respuestas JSON estructuradas, manejo de códigos HTTP y middlewares." },
+    { label: "PERSISTENCIA", val: "Conceptos aplicados en modelado relacional (SQL) y documental (NoSQL)." }
+  ],
+  ia: [
+    { label: "MÓDULO", val: "INGENIERÍA DE SOFTWARE CON IA & SENATI", highlight: true },
+    { label: "FORMACIÓN", val: "Carrera técnica en SENATI enfocada en la convergencia de software e Inteligencia Artificial." },
+    { label: "CAPACIDADES", val: "Integración de endpoints de modelos LLM, automatización de flujos y procesamiento de datos." },
+    { label: "VALOR", val: "Capacidad de aplicar IA para resolver cuellos de botella en sistemas de software reales." }
+  ],
+  pipeline: [
+    { label: "MÓDULO", val: "DEVOPS, GIT & CONTROL DE VERSIONES", highlight: true },
+    { label: "CONTROL", val: "Flujos de trabajo ramificados (feature branches), inspección rigurosa y resolución de estados." },
+    { label: "HERRAMIENTAS", val: "Git CLI, Lazygit, repositorios GitHub, Linux (WSL) y Gentle Shell." },
+    { label: "ESTÁNDAR", val: "Conventional Commits (feat, fix, refactor, chore) y despliegue continuo." }
+  ]
 };
 
-const botones = document.querySelectorAll(".filter-btn");
-const salida = document.getElementById("output-box");
+const botonesConsola = document.querySelectorAll(".console-btn");
+const displayConsola = document.getElementById("diagnostic-display");
 
-if (botones.length && salida) {
-  botones.forEach(boton => {
+function renderizarDiagnostico(specKey) {
+  const datos = specsPorModulo[specKey] || specsPorModulo.overview;
+  displayConsola.innerHTML = "";
+
+  datos.forEach(item => {
+    const row = document.createElement("div");
+    row.className = "term-row";
+
+    const labelSpan = document.createElement("span");
+    labelSpan.className = "term-dim";
+    labelSpan.textContent = `${item.label}: `;
+
+    const valSpan = document.createElement("span");
+    if (item.highlight) {
+      valSpan.className = "term-highlight";
+    }
+    valSpan.textContent = item.val;
+
+    row.appendChild(labelSpan);
+    row.appendChild(valSpan);
+    displayConsola.appendChild(row);
+  });
+}
+
+if (botonesConsola.length && displayConsola) {
+  botonesConsola.forEach(boton => {
     boton.addEventListener("click", () => {
-      // 1. Quitar clase active a todos los botones
-      botones.forEach(b => b.classList.remove("active"));
-      
-      // 2. Activar el botón presionado
+      botonesConsola.forEach(b => b.classList.remove("active"));
       boton.classList.add("active");
-      
-      // 3. Cambiar el texto dinámico según el área seleccionada
-      const area = boton.getAttribute("data-area");
-      salida.textContent = infoPorArea[area] || infoPorArea.todos;
+      const spec = boton.getAttribute("data-spec");
+      renderizarDiagnostico(spec);
     });
   });
 }
